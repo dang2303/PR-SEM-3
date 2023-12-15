@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,200;1,400;1,500&display=swap");
+
+:root {
+  --red: #ed2025;
+  --white: #fff;
+  --grey: #f5f5f5;
+  --black: #222;
+  --xam: #999;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#wrapper {
+  /* Kích thước màn hình là 1280 x 720 */
+  width: 100%;
+}
+
+#header {
+  width: 100%;
+  padding: 0px 30px;
+  margin-top: 33px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+}
+
+#menu .item {
+  margin: 0px 25px;
+}
+
+#menu .item a {
+  color: #626a67;
+  text-decoration: none;
+  position: relative;
+}
+
+#menu .item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: var(--red);
+  transition: width 0.3s ease;
+}
+
+#menu .item a:hover::after {
+  width: 110%;
+}
+
+#actions {
+  display: flex;
+}
+
+#actions .item {
+  margin-left: 22px;
+}
+
+/* search */
+
+.input-container {
+  position: relative;
+  width: 190px;
+}
+
+.input-container input[type="text"] {
+  font-size: 15px;
+  color: var(--xam);
+  border: none;
+  border-bottom: 2px solid var(--xam);
+  outline: none;
+  width: 100%;
+  background-color: transparent;
+}
+
+.label {
+  transition: all 0.3s ease;
+  color: var(--xam);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+  top: -20px;
+  transition: 0.3s;
+  color: var(--red);
+}
+
+.input-container .underline {
+  position: absolute;
+  bottom: 4px;
+  left: -7px;
+  height: 2px;
+  width: 110%;
+  background-color: var(--red);
+  transform: scaleX(0);
+}
+
+.input-container .sideline {
+  position: relative;
+  bottom: 15px;
+  right: 18px;
+  height: 2px;
+  width: 18%;
+  background-color: var(--red);
+  transform: scaleX(0);
+  rotate: 90deg;
+}
+
+.input-container .upperline {
+  position: absolute;
+  bottom: 30px;
+  left: -8px;
+  height: 2px;
+  width: 110%;
+  background-color: var(--red);
+  transform: scaleX(0);
+}
+
+.input-container .line {
+  position: relative;
+  bottom: 17px;
+  left: 178px;
+  height: 2px;
+  width: 18%;
+  background-color: var(--red);
+  transform: scaleX(0);
+  rotate: 90deg;
+}
+
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
+  transform: scaleX(1);
+  transition: 1s;
+}
+
+.input-container input[type="text"]:focus ~ .sideline,
+.input-container input[type="text"]:valid ~ .sideline {
+  transform: scaleX(1);
+  transition: 1s;
+}
+
+.input-container input[type="text"]:focus ~ .upperline,
+.input-container input[type="text"]:valid ~ .upperline {
+  transform: scaleX(1);
+  transition: 1s;
+}
+
+.input-container input[type="text"]:focus ~ .line,
+.input-container input[type="text"]:valid ~ .line {
+  transform: scaleX(1);
+  transition: 1s;
+}
+
+/* menu hover */
+#header .item {
+  position: relative;
+}
+
+#header .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 10px;
+  z-index: 999;
+  /* Đặt giá trị z-index cao hơn các phần tử khác */
+  width: 400px;
+  flex-direction: column;
+}
+
+#header .submenu .columnLeft {
+  float: left;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+#header .submenu .columnRight {
+  float: left;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+#header .item:hover .submenu {
+  display: block;
+}
+
+#banner {
+  width: 100%;
+  background-image: url("https://theme.hstatic.net/1000357687/1000967377/14/banner_top_img.png?v=150");
+  height: 463px;
+  margin-top: 40px;
+  display: flex;
+  padding: 0px 133px;
+  position: relative;
+}
+
+#banner .box-left,
+#banner .box-right {
+  width: 50%;
+}
+
+#banner .box-left h2 {
+  font-size: 48px;
+  margin-top: 75px;
+  color: #fff;
+}
+
+#banner .box-left p {
+  color: #d0d0d0;
+}
+
+#banner .box-left button {
+  width: 191px;
+  height: 40px;
+  margin-top: 41px;
+  background: #1d1a1a;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+#banner .box-left button:hover {
+  background: var(--red);
+}
+
+#banner .box-right {
+  padding-left: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner .box-right img {
+  margin: 0px 10px;
+  animation: animation 3s infinite linear;
+  border-radius: 10px; /* Đặt giá trị border-radius tùy chọn */
+  width: 95px;
+  height: 275.99px;
+}
+
+#banner .box-right img:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+#banner .box-right img:nth-child(2) {
+  animation-delay: 1s;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.to-bottom {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.intro {
+  margin-top: 40px;
+  position: relative;
+}
+
+.intro img {
+  width: 100%;
+}
+
+.introText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 150px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white);
+  /* Màu chữ cho vùng introText */
+}
+
+.introText a.titleIntro {
+  position: relative;
+  color: #ffffff;
+  /* Màu chữ cho link */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.introText a.titleIntro:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: #ffffff;
+  /* Màu gạch chân */
+  transition: width 0.3s ease;
+}
+
+.introText a.titleIntro:hover:before {
+  width: 100%;
+}
+
+@keyframes gach-chay {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.storySovereign {
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Màu nền xám đen hơi trong suốt */
+  padding: 10px;
+  color: #ffffff;
+  /* Màu chữ cho đoạn văn */
+}
+
+.moreIntro {
+  display: inline-block;
+  margin-top: 10px;
+  /* Khoảng cách giữa "Trong thế giới thời trang..." và "XEM THÊM" */
+  color: #ffffff;
+  /* Màu chữ cho "XEM THÊM" */
+  border: 1px solid #ffffff;
+  /* Viền màu trắng */
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: transparent;
+  /* Background trong suốt */
+}
+
+.moreIntro:hover {
+  background-color: var(--red);
+  /* Màu nền khi hover */
+  border-bottom: 1px solid #ffffff;
+  /* Gạch chân khi hover */
+  border-color: transparent;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+.slider img.active {
+  display: block;
+}
+
+.shopInfo {
+  margin-top: 10px;
+  background-image: url("https://theme.hstatic.net/1000357687/1000967377/14/home_sm_img.png?v=150");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  /* Tùy chỉnh chiều cao phù hợp */
+  text-align: center;
+}
+
+.shopInfo span {
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: var(--white);
+}
+
+.shopInfo a {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.shopInfo a:hover {
+  background-color: var(--red);
+  color: white;
+}
