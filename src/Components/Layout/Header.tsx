@@ -1,11 +1,19 @@
 import React from "react";
 import "../css/header2.css";
+import { NavLink } from "react-router-dom";
+import cartItemModel from "../../Interface/cartItemModel";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Storage/Redux/store";
 function Header() {
+  const shoppingCartFromStore: cartItemModel[] = useSelector(
+    (state: RootState) => state.shoppingCartStore.cartItems ?? []
+  );
+
   return (
     <div className="header">
       <div className="nav">
         <div className="logo">
-          <a href="#default">CompanyLogo</a>
+          <NavLink to="/">CompanyLogo</NavLink>
         </div>
         <div className="searchBar">
           <input
@@ -16,9 +24,12 @@ function Header() {
             <i className="bi bi-search"></i>
           </a>
         </div>
-        <a href="#contact" style={{ color: "black" }}>
-          Buy
-        </a>
+        <NavLink to="/shoppingCart" style={{ color: "black" }}>
+          <i className="bi bi-cart"></i>
+          {shoppingCartFromStore?.length
+            ? `(${shoppingCartFromStore.length})`
+            : ""}
+        </NavLink>
         <a href="#about" style={{ color: "black" }}>
           Sell
         </a>
